@@ -1,0 +1,177 @@
+Zoo Website Implementation Plan
+
+
+colors:#fae8e0-cream
+
+1. Project Setup
+   - Create React project using Vite
+   - Install required dependencies (react-router-dom)
+   - Set up project structure
+   - Initialize Git repository
+
+2. Data Structure Setup
+   - Create animals.js data file
+   - Structure animal data with:
+     * id
+     * name
+     * image
+     * description
+     * diet
+     * group (mammal/bird/reptile)
+     * additional details
+   - Create helper functions for data manipulation
+
+3. Component Development
+   a. Layout Components
+      - Header with logo
+      - Navigation menu
+      - Footer
+      - Sidebar component
+      - Main content area
+
+   b. Animal Components
+      - AnimalList
+      - AnimalDetails
+      - AnimalCard
+      - GroupInfo
+
+4. State Management Implementation
+   - Set up state for:
+     * allAnimals
+     * selectedAnimalId
+     * selectedAnimal
+     * activeGroup
+   - Create state management functions
+   - Implement useEffect hooks for data fetching
+
+5. Page Implementation
+   a. Home Page
+      - Welcome message
+      - Sidebar with all animals
+      - Main content area
+      - Animal selection functionality
+      - "Read More" button implementation
+
+   b. Group Pages
+      - Mammals page
+      - Birds page
+      - Reptiles page
+      - Group-specific content
+      - Filtered animal lists
+
+6. Routing Setup
+   - Implement React Router
+   - Set up routes for:
+     * Home (/)
+     * Mammals (/mammals)
+     * Birds (/birds)
+     * Reptiles (/reptiles)
+   - Configure navigation links
+
+7. Styling Implementation
+   - Set up CSS Modules
+   - Create responsive design
+   - Implement animations
+   - Style components:
+     * Header
+     * Navigation
+     * Sidebar
+     * Animal cards
+     * Details view
+     * Footer
+
+
+Implementation Order:
+1. Start with project setup and data structure
+2. Implement basic layout components
+3. Create animal components
+4. Set up routing
+5. Implement state management
+6. Add styling
+7. Test and refine
+8. Final deployment
+
+Key Features to Implement:
+- Responsive navigation
+- Dynamic content loading
+- Animal details modal/popup
+- Filtered animal lists
+- Smooth transitions
+- Accessible design
+- Error handling
+- Loading states
+
+React Features Implementation Details:
+
+1. useState Implementation Points:
+   a. Home Page:
+      - selectedAnimalId: Track which animal is selected
+      - showWelcome: Toggle between welcome message and animal details
+      - isModalOpen: Control animal details modal visibility
+
+   b. Group Pages:
+      - selectedAnimalId: Track selected animal in group
+      - filteredAnimals: Store filtered list of animals by group
+      - isDetailsVisible: Control animal details visibility
+
+   c. Layout Components:
+      - isMenuOpen: Control mobile menu visibility (Header)
+      - activeLink: Track current navigation link
+
+   d. Animal Components:
+      - AnimalList: Track hover state for animations
+      - AnimalDetails: Track expanded/collapsed state
+      - AnimalCard: Track favorite/bookmark state
+
+2. useEffect Implementation Points:
+   a. Data Fetching:
+      - Home Page: Load all animals on mount
+      - Group Pages: Filter animals by group on mount/group change
+      - AnimalDetails: Fetch detailed data when ID changes
+
+   b. Side Effects:
+      - Update document title based on current page
+      - Handle window resize for responsive design
+      - Manage scroll position on navigation
+      - Clean up event listeners and subscriptions
+
+3. Props Usage:
+   a. Layout Components:
+      - Header: title, logo, navigation items
+      - Footer: copyright text, social links
+      - Sidebar: animals list, onSelect handler
+      - Navigation: current path, links array
+
+   b. Animal Components:
+      - AnimalList: animals array, onSelect handler
+      - AnimalDetails: animal object, onClose handler
+      - AnimalCard: animal data, onClick handler
+      - GroupInfo: group type, description
+
+4. Conditional Rendering Points:
+   a. Home Page:
+      - Welcome message vs Animal details
+      - "Read More" button visibility
+      - Modal visibility for animal details
+
+   b. Group Pages:
+      - Group introduction vs Animal details
+      - Empty state when no animals in group
+      - Loading state while fetching data
+
+   c. Layout:
+      - Mobile menu visibility
+      - Active navigation link highlighting
+      - Footer content based on page
+
+   d. Animal Components:
+      - AnimalDetails: Show/hide based on selection
+      - AnimalCard: Different layouts for different screen sizes
+      - Loading states while images load
+      - Error states for failed data fetching
+
+5. Component Communication:
+   - Parent to Child: Props for data and callbacks
+   - Child to Parent: Callback functions
+   - Sibling Components: Through parent state
+   - Global State: For shared data across components
