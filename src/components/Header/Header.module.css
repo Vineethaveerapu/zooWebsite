@@ -17,12 +17,12 @@
 
 .nav a {
   text-decoration: none;
-  color: currentColor;
+  color: var(--nav-color, currentColor);
   transition: all 0.3s ease;
 }
 
 .nav a:hover {
-  color: var(--primary-color);
+  --nav-color: var(--primary-color);
   transition: all 0.3s ease;
 }
 
@@ -33,9 +33,14 @@
   height: 2px;
   background-color: var(--primary-color);
   transition: all 0.3s ease;
-  transform: scaleX(0);
+  transform: scaleX(var(--scale, 0));
 }
 
 .nav a:hover::after {
-  transform: scale(1);
+  --scale: 1;
+}
+
+a.active {
+  --scale: 1;
+  --nav-color: var(--primary-color);
 }
