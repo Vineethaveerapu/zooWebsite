@@ -87,7 +87,7 @@ const reptiles = [
     "Small insects and spiders",
     "20 years",
     "Northern Australia",
-    "Reptile"
+    "Reptiles"
   ),
   new Animal(
     "Hawksbill Turtle",
@@ -97,7 +97,7 @@ const reptiles = [
     "Other animals (sponges & jellyfish), sea plants",
     "50 years",
     "Tropical coasts of Queensland, Northern Territory and Western Australia.",
-    "Reptile"
+    "Reptiles"
   ),
   new Animal(
     "Perentie",
@@ -107,34 +107,20 @@ const reptiles = [
     "Plants matter like fruit, insects and small animals like mice amd lizards",
     "20 years",
     "Deserts",
-    "Reptile"
+    "Reptiles"
   )
 ];
 
 const allAnimals = [...reptiles, ...mammals, ...birds];
 
-export { birds, mammals, reptiles, allAnimals };
+function getAnimalsByGroup(group = "all") {
+  if (group === "all" || group === "home") {
+    return allAnimals;
+  }
 
-/* HELPER
+  return allAnimals.filter(
+    (animal) => animal.group.toLowerCase() === group.toLowerCase()
+  );
+}
 
-if you want to import all animals in a script, you import like this at the top:
-
-import { allAnimals } from "./data/animals.js";
-
-only the birds:
-
-import { birds } from "./data/animals.js";
-
-only the mammals.
-
-import { mammals } from "./data/animals.js";
-
-only the reptiles.
-
-import { reptiles } from "./data/animals.js";
-
-You can also pick 2 different animal-arrays by:
-
-import { repiles, birds } from "./data/animals.js";
-
-*/
+export default getAnimalsByGroup;

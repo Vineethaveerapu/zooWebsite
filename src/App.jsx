@@ -1,10 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Birds from "./pages/Birds";
-import Mammals from "./pages/Mammals";
-import Reptiles from "./pages/Reptiles";
+import Page from "./pages/Page";
 
 const NotFound = () => (
   <div style={{ textAlign: "center", padding: "2rem" }}>
@@ -18,22 +15,25 @@ function App() {
     <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home title="Welcome to ZooWebsite" />} />
+          <Route
+            path="/"
+            element={<Page title="Welcome to ZooWebsite" slug="home" />}
+          />
           <Route
             path="/home"
-            element={<Home title="Welcome to ZooWebsite" />}
+            element={<Page title="Welcome to ZooWebsite" slug="home" />}
           />
           <Route
             path="/birds"
-            element={<Birds title="Welcome to Birds Page" />}
+            element={<Page title="Welcome to Birds Page" slug="birds" />}
           />
           <Route
             path="/mammals"
-            element={<Mammals title="Welcome to Mammals Page" />}
+            element={<Page title="Welcome to Mammals Page" slug="mammals" />}
           />
           <Route
             path="/reptiles"
-            element={<Reptiles title="Welcome to Reptiles Page" />}
+            element={<Page title="Welcome to Reptiles Page" slug="reptiles" />}
           />
           <Route path="*" element={<NotFound />} />
         </Route>

@@ -1,10 +1,12 @@
 import BackgroundMedia from "/src/components/BackgroundMedia";
 import Sidebar from "/src/components/Sidebar";
-import { allAnimals } from "/src/data/animals.js";
+import getAnimalsByGroup from "/src/data/animals.js";
 import FeaturedContent from "/src/components/FeaturedContent";
 import Main from "/src/components/Main";
 
-const Home = ({ title }) => {
+const Page = ({ title, slug }) => {
+  const animals = getAnimalsByGroup(slug);
+
   return (
     <div>
       <BackgroundMedia video="/src/assets/video1.mp4">
@@ -12,11 +14,11 @@ const Home = ({ title }) => {
       </BackgroundMedia>
 
       <Main>
-        <Sidebar animals={allAnimals} />
-        <FeaturedContent pageName="Home" />
+        <Sidebar animals={animals} />
+        <FeaturedContent pageName={slug} />
       </Main>
     </div>
   );
 };
 
-export default Home;
+export default Page;
