@@ -176,3 +176,13 @@ React Features Implementation Details:
    - Child to Parent: Callback functions
    - Sibling Components: Through parent state
    - Global State: For shared data across components
+
+
+
+   Modified the FeaturedContent component to:
+Accept a pageName prop
+Filter the content to show only the relevant content for the current page
+Display the content in a clean format with a heading and paragraph
+Updated all pages (Home, Birds, Mammals, and Reptiles) to:
+Import the FeaturedContent component
+Pass the correct pageName prop to show only the relevant content for each page

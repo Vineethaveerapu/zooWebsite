@@ -1,4 +1,7 @@
 import BackgroundMedia from "/src/components/BackgroundMedia";
+import Sidebar from "/src/components/Sidebar";
+import { mammals } from "/src/data/animals.js";
+import FeaturedContent from "/src/components/FeaturedContent";
 
 const Mammals = ({ title }) => {
   return (
@@ -9,6 +12,8 @@ const Mammals = ({ title }) => {
       >
         <h1>{title}</h1>
       </BackgroundMedia>
+      <Sidebar animals={mammals} />
+      <FeaturedContent pageName="Mammals" />
     </div>
   );
 };
