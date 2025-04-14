@@ -18,11 +18,23 @@ function App() {
     <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home title="Home" />} />
-          <Route path="/home" element={<Home title="Home" />} />
-          <Route path="/birds" element={<Birds title="Birds" />} />
-          <Route path="/mammals" element={<Mammals title="Mammals" />} />
-          <Route path="/reptiles" element={<Reptiles title="Reptiles" />} />
+          <Route path="/" element={<Home title="Welcome to ZooWebsite" />} />
+          <Route
+            path="/home"
+            element={<Home title="Welcome to ZooWebsite" />}
+          />
+          <Route
+            path="/birds"
+            element={<Birds title="Welcome to Birds Page" />}
+          />
+          <Route
+            path="/mammals"
+            element={<Mammals title="Welcome to Mammals Page" />}
+          />
+          <Route
+            path="/reptiles"
+            element={<Reptiles title="Welcome to Reptiles Page" />}
+          />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,8 +1,16 @@
+import BackgroundMedia from "/src/components/BackgroundMedia";
+
 const Birds = ({ title }) => {
   return (
     <div>
-      <h1>{title}</h1>
-      <p>Birds</p>
+      <div>
+        <BackgroundMedia
+          video="/src/assets/video1.mp4"
+          image="/src/assets/lizard.png"
+        >
+          <h1>{title}</h1>
+        </BackgroundMedia>
+      </div>
     </div>
   );
 };

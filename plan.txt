@@ -6,6 +6,7 @@ colors:#fae8e0-cream
 1. Project Setup
    - Create React project using Vite
    - Install required dependencies (react-router-dom)
+      -  installed phosphor-Icons for icons
    - Set up project structure
    - Initialize Git repository
 
