@@ -81,6 +81,7 @@ a.active {
   backdrop-filter: blur(7px);
   text-align: center;
   animation: slideDown 0.7s ease-in-out;
+  z-index: 10;
 }
 
 @keyframes slideDown {
