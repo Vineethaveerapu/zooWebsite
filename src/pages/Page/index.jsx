@@ -3,12 +3,17 @@ import Sidebar from "/src/components/Sidebar";
 import getAnimalsByGroup from "/src/data/animals.js";
 import FeaturedContent from "/src/components/FeaturedContent";
 import Main from "/src/components/Main";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Page = ({ title, slug, sidebarTitle }) => {
   const animals = getAnimalsByGroup(slug);
   // need a state to hold current sidebar click active item
   const [activeItem, setActiveItem] = useState(null);
+
+  // Reset activeItem when slug changes
+  useEffect(() => {
+    setActiveItem(null);
+  }, [slug]);
 
   const handleSidebarClick = (item) => {
     // if already active, remove that item

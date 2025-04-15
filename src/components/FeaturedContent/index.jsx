@@ -1,5 +1,4 @@
 import { mainContent } from "/src/data/mainContent.js";
-import { Link } from "react-router-dom";
 import styles from "./FeaturedContent.module.css";
 import AnimalCard from "../AnimalCard";
 
@@ -25,11 +24,13 @@ const FeaturedContent = ({ pageName, activeItem, handleSidebarClick }) => {
   const { name, content, steps } = pageContent;
 
   return (
-    <div className={styles.mainContent}>
-      <h2>{name}</h2>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-      <div dangerouslySetInnerHTML={{ __html: steps }} />
-    </div>
+    <section className={styles.featuredContentContainer}>
+      <div className={styles.featuredContent}>
+        <h2>{name}</h2>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div dangerouslySetInnerHTML={{ __html: steps }} />
+      </div>
+    </section>
   );
 };
 

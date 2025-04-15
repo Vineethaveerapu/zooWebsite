@@ -19,6 +19,7 @@ function App() {
             path="/"
             element={
               <Page
+                key="home"
                 title="Welcome to ZooWebsite"
                 slug="home"
                 sidebarTitle="Zoo Animals"
@@ -29,6 +30,7 @@ function App() {
             path="/home"
             element={
               <Page
+                key="home"
                 title="Welcome to ZooWebsite"
                 slug="home"
                 sidebarTitle="Zoo Animals"
@@ -39,6 +41,7 @@ function App() {
             path="/birds"
             element={
               <Page
+                key="birds"
                 title="Welcome to Birds Page"
                 slug="birds"
                 sidebarTitle="Birds"
@@ -49,6 +52,7 @@ function App() {
             path="/mammals"
             element={
               <Page
+                key="mammals"
                 title="Welcome to Mammals Page"
                 slug="mammals"
                 sidebarTitle="Mammals"
@@ -59,6 +63,7 @@ function App() {
             path="/reptiles"
             element={
               <Page
+                key="reptiles"
                 title="Welcome to Reptiles Page"
                 slug="reptiles"
                 sidebarTitle="Reptiles"

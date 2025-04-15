@@ -3,12 +3,17 @@ import logo from "/src/assets/logo.png";
 import { pages } from "/src/data/pages.js";
 import styles from "./Header.module.css";
 import { List, X } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   // get current page from router
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   const menuButtonClick = () => {
     setIsOpen(isOpen ? false : true);
