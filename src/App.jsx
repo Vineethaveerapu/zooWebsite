@@ -17,23 +17,53 @@ function App() {
         <Route element={<Layout />}>
           <Route
             path="/"
-            element={<Page title="Welcome to ZooWebsite" slug="home" />}
+            element={
+              <Page
+                title="Welcome to ZooWebsite"
+                slug="home"
+                sidebarTitle="Zoo Animals"
+              />
+            }
           />
           <Route
             path="/home"
-            element={<Page title="Welcome to ZooWebsite" slug="home" />}
+            element={
+              <Page
+                title="Welcome to ZooWebsite"
+                slug="home"
+                sidebarTitle="Zoo Animals"
+              />
+            }
           />
           <Route
             path="/birds"
-            element={<Page title="Welcome to Birds Page" slug="birds" />}
+            element={
+              <Page
+                title="Welcome to Birds Page"
+                slug="birds"
+                sidebarTitle="Birds"
+              />
+            }
           />
           <Route
             path="/mammals"
-            element={<Page title="Welcome to Mammals Page" slug="mammals" />}
+            element={
+              <Page
+                title="Welcome to Mammals Page"
+                slug="mammals"
+                sidebarTitle="Mammals"
+              />
+            }
           />
           <Route
             path="/reptiles"
-            element={<Page title="Welcome to Reptiles Page" slug="reptiles" />}
+            element={
+              <Page
+                title="Welcome to Reptiles Page"
+                slug="reptiles"
+                sidebarTitle="Reptiles"
+              />
+            }
           />
           <Route path="*" element={<NotFound />} />
         </Route>
