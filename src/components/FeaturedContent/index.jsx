@@ -1,24 +1,16 @@
 import { mainContent } from "/src/data/mainContent.js";
 import { Link } from "react-router-dom";
+import styles from "./FeaturedContent.module.css";
+import AnimalCard from "../AnimalCard";
+
 const FeaturedContent = ({ pageName, activeItem, handleSidebarClick }) => {
   if (activeItem) {
-    const { name, image, description, groupSlug } = activeItem;
-    const shortDescription = description.slice(0, 100);
-
     return (
-      <div>
-        <h2>{name}</h2>
-        <img src={image} alt={name} />
-        <p>{shortDescription}</p>
-        <Link
-          to={`${groupSlug}`}
-          onClick={() => {
-            handleSidebarClick(null);
-          }}
-        >
-          Learn More
-        </Link>
-      </div>
+      <AnimalCard
+        pageName={pageName}
+        activeItem={activeItem}
+        handleSidebarClick={handleSidebarClick}
+      />
     );
   }
 
