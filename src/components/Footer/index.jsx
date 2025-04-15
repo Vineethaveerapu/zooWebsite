@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-
+import Navigation from "../Navigation";
 import {
   FacebookLogo,
   InstagramLogo,
@@ -10,29 +10,29 @@ import {
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <p>&copy; 2023 ZooWebsite. All rights reserved.</p>
-
-      <div className={styles.quickLinks}>
-        <p>Quick Links</p>
-      </div>
-
-      <div className={styles.socialMedia}>
-        Contact us: info@zoowebsite.com
-        <div className={styles.socialMediaIcons}>
-          <Phone size={32} />
-          <Envelope size={32} />
+    <>
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <div>CONTACT US</div>
+          <div>ABOUT </div>
+          <div>PRIVACY POLICY</div>
+          <div>CAREERS</div>
+          <div>LOCATION</div>
         </div>
-      </div>
-      <div className={styles.socialMedia}>
-        Follow us on social media!
+
         <div className={styles.socialMediaIcons}>
           <FacebookLogo size={32} />
           <InstagramLogo size={32} />
           <TwitterLogo size={32} />
+          <Phone size={32} />
+          <Envelope size={32} />
         </div>
-      </div>
-    </footer>
+
+        <p className={styles.footerText}>
+          &copy; 2025 ZooWebsite. All rights reserved.
+        </p>
+      </footer>
+    </>
   );
 };
 
