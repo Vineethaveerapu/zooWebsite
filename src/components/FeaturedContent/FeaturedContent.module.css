@@ -1,0 +1,31 @@
+.featuredContentContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.featuredContent {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+}
+
+.mainContent {
+  padding: 2rem;
+}
