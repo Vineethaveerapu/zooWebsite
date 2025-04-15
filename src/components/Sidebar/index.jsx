@@ -3,7 +3,7 @@ import styles from "./Sidebar.module.css";
 const Sidebar = ({ animals, handleSidebarClick, activeItem }) => {
   return (
     <aside className={styles.sidebar}>
-      <div>
+      <div className={styles.sidebarContent}>
         {animals.map((animal) => (
           <div
             key={animal.name}
