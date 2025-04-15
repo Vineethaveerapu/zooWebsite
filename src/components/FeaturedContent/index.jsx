@@ -30,10 +30,13 @@ const FeaturedContent = ({ pageName, activeItem, handleSidebarClick }) => {
 
   if (!pageContent) return "No content found for pageName";
 
+  const { name, content, steps } = pageContent;
+
   return (
-    <div>
-      <h2>{pageContent.name}</h2>
-      <p>{pageContent.content}</p>
+    <div className={styles.mainContent}>
+      <h2>{name}</h2>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div dangerouslySetInnerHTML={{ __html: steps }} />
     </div>
   );
 };
