@@ -6,9 +6,7 @@
 
   /* first child flex: 1 */
   > :first-child {
-    /* flex: 0 0 20vw; */
     min-width: fit-content;
-    padding: 0 1rem;
   }
 
   /* second child flex: 2 */
