@@ -1,13 +1,28 @@
 class Animal {
-  constructor(name, weight, length, description, food, lifespan, found, group) {
+  constructor(
+    name,
+    weight,
+    length,
+    description,
+    food,
+    lifespan,
+    found,
+    group,
+    image
+  ) {
     this.name = name;
     this.slug = name.trim().toLowerCase().replace(/\s+/g, "-");
+    this.image = new URL(
+      `/src/assets/${image || "echidna.png"}`,
+      import.meta.url
+    ).href;
     this.weight = weight;
     this.length = length;
     this.description = description;
     this.lifespan = lifespan;
     this.found = found;
     this.group = group;
+    this.groupSlug = group.trim().toLowerCase().replace(/\s+/g, "-");
     this.food = food;
   }
 }
@@ -21,7 +36,8 @@ const mammals = [
     "insects such as ants and termites, beetle larvae and worms",
     "50 years",
     "Throughout Australia",
-    "Mammals"
+    "Mammals",
+    "echidna.png"
   ),
   new Animal(
     "Tasmanian Devil",
@@ -31,7 +47,8 @@ const mammals = [
     "A predator, then eat meat from other animals such as wallabies and wombats",
     "5 years",
     "Tasmania",
-    "Mammals"
+    "Mammals",
+    "tasmanian-devil.png"
   ),
   new Animal(
     "Quokka",
@@ -41,7 +58,8 @@ const mammals = [
     "Plant eaters, they munch on shrubs and grasses",
     "10 years",
     "Only found on Rottnest Island and a few places on mainland Western Australia",
-    "Mammals"
+    "Mammals",
+    "quokka.png"
   )
 ];
 
@@ -54,7 +72,8 @@ const birds = [
     "Plants matter like fruit, insects and small animals like mice amd lizards",
     "20 years",
     "Queensland",
-    "Birds"
+    "Birds",
+    "cassowary.png"
   ),
   new Animal(
     "Kookaburra",
@@ -64,7 +83,8 @@ const birds = [
     "Insects and smalll animals including snakes, frogs and lizards",
     "20 years",
     "Australia wide",
-    "Birds"
+    "Birds",
+    "kookaburra.png"
   ),
   new Animal(
     "Yellow Tailed Black Cockatoo",
@@ -74,7 +94,8 @@ const birds = [
     "Fruit, seeds and other plant material",
     "41 years",
     "SE Australia",
-    "Birds"
+    "Birds",
+    "yellow-tailed-black-cockatoo.png"
   )
 ];
 
@@ -87,7 +108,8 @@ const reptiles = [
     "Small insects and spiders",
     "20 years",
     "Northern Australia",
-    "Reptiles"
+    "Reptiles",
+    "lizard.png"
   ),
   new Animal(
     "Hawksbill Turtle",
@@ -97,7 +119,8 @@ const reptiles = [
     "Other animals (sponges & jellyfish), sea plants",
     "50 years",
     "Tropical coasts of Queensland, Northern Territory and Western Australia.",
-    "Reptiles"
+    "Reptiles",
+    "turtle.png"
   ),
   new Animal(
     "Perentie",
@@ -107,7 +130,8 @@ const reptiles = [
     "Plants matter like fruit, insects and small animals like mice amd lizards",
     "20 years",
     "Deserts",
-    "Reptiles"
+    "Reptiles",
+    "perentie.png"
   )
 ];
 

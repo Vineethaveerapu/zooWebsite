@@ -3,9 +3,15 @@ import Sidebar from "/src/components/Sidebar";
 import getAnimalsByGroup from "/src/data/animals.js";
 import FeaturedContent from "/src/components/FeaturedContent";
 import Main from "/src/components/Main";
-
+import { useState } from "react";
 const Page = ({ title, slug }) => {
   const animals = getAnimalsByGroup(slug);
+  // need a state to hold current sidebar click active item
+  const [activeItem, setActiveItem] = useState(null);
+
+  const handleSidebarClick = (item) => {
+    setActiveItem(item);
+  };
 
   return (
     <div>
@@ -14,8 +20,16 @@ const Page = ({ title, slug }) => {
       </BackgroundMedia>
 
       <Main>
-        <Sidebar animals={animals} />
-        <FeaturedContent pageName={slug} />
+        <Sidebar
+          animals={animals}
+          activeItem={activeItem}
+          handleSidebarClick={handleSidebarClick}
+        />
+        <FeaturedContent
+          pageName={slug}
+          activeItem={activeItem}
+          handleSidebarClick={handleSidebarClick}
+        />
       </Main>
     </div>
   );
