@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { List, X } from "@phosphor-icons/react";
 
 const Navigation = () => {
+  // get current page from router
   const location = useLocation();
 
   const [isOpen, setIsOpen] = useState(false);
