@@ -1,13 +1,19 @@
 .sidebar {
-  min-width: 400px;
+  position: relative;
   background-color: #ffffff;
-  box-shadow: 0 4px 6px -1px rgba(128, 74, 74, 1),
-    0 2px 4px -1px rgba(181, 12, 12, 1);
-  border-radius: 12px;
   transition: all 0.3s ease;
   align-self: flex-start;
+}
 
-  padding: 3rem 2rem;
+/* desktop */
+@media (min-width: 768px) {
+  .sidebar {
+    min-width: 400px;
+    box-shadow: 0 4px 6px -1px rgba(128, 74, 74, 1),
+      0 2px 4px -1px rgba(181, 12, 12, 1);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+  }
 }
 
 .sidebarHeader {
@@ -35,4 +41,37 @@
 
 .sidebarItem:hover {
   background-color: #f0f0f0;
+}
+
+.contentWrapper {
+  display: block;
+}
+
+.mobileMenuButton {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    background-color: var(--tertiary-color);
+  }
+
+  .sidebarItem {
+    padding: 0.5rem;
+  }
+
+  .contentWrapper {
+    display: none;
+  }
+
+  .contentWrapper.open {
+    display: block;
+    /* background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px); */
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
 }
