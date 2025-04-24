@@ -24,9 +24,29 @@ const Page = ({ title, slug, sidebarTitle }) => {
     }
   };
 
+  let video = null;
+  let image = null;
+
+  switch (slug) {
+    case "birds":
+      image = "/src/assets/birds.avif";
+      break;
+    case "mammals":
+      image = "/src/assets/mammals.avif";
+      break;
+    case "reptiles":
+      image = "/src/assets/reptiles.avif";
+      break;
+
+    case "home":
+    default:
+      video = "/src/assets/video1.mp4";
+      break;
+  }
+
   return (
     <div>
-      <BackgroundMedia video="/src/assets/video1.mp4">
+      <BackgroundMedia video={video} image={image}>
         <h1>{title}</h1>
       </BackgroundMedia>
 

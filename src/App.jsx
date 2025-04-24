@@ -42,7 +42,7 @@ function App() {
             element={
               <Page
                 key="birds"
-                title="Welcome to Birds Page"
+                title="A World of Birds"
                 slug="birds"
                 sidebarTitle="Birds"
               />
@@ -53,7 +53,7 @@ function App() {
             element={
               <Page
                 key="mammals"
-                title="Welcome to Mammals Page"
+                title="A World of Mammals"
                 slug="mammals"
                 sidebarTitle="Mammals"
               />
@@ -64,7 +64,7 @@ function App() {
             element={
               <Page
                 key="reptiles"
-                title="Welcome to Reptiles Page"
+                title="A World of Reptiles"
                 slug="reptiles"
                 sidebarTitle="Reptiles"
               />
