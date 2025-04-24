@@ -22,7 +22,29 @@
 
   p {
     font-size: 1.2rem;
-    color: #666;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuredContent {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      padding: 0.2rem;
+    }
+
+    img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
   }
 }
 
