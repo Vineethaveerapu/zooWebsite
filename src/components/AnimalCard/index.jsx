@@ -64,12 +64,13 @@ const AnimalCard = ({ pageName, activeItem, handleSidebarClick }) => {
               onClick={() => {
                 handleSidebarClick(null);
               }}
+              className={styles.readButton}
             >
               Visit {group} for more information
             </Link>
           </>
         ) : (
-          <button onClick={handleReadMore}>
+          <button className={styles.readButton} onClick={handleReadMore}>
             {showReadMore ? "Read Less" : "Read More"}
           </button>
         )}
