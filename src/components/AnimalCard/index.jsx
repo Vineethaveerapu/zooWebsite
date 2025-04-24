@@ -66,7 +66,10 @@ const AnimalCard = ({ pageName, activeItem, handleSidebarClick }) => {
 
           {isHomePage ? (
             <>
-              <button className={styles.readButton} onClick={openModal}>
+              <button
+                className={animalCardStyles.readButton}
+                onClick={openModal}
+              >
                 Read More
               </button>
               <Link
@@ -77,13 +80,16 @@ const AnimalCard = ({ pageName, activeItem, handleSidebarClick }) => {
                 onClick={() => {
                   handleSidebarClick(null);
                 }}
-                className={styles.readButton}
+                className={animalCardStyles.readButton}
               >
                 Visit {group} for more information
               </Link>
             </>
           ) : (
-            <button className={styles.readButton} onClick={handleReadMore}>
+            <button
+              className={animalCardStyles.readButton}
+              onClick={handleReadMore}
+            >
               {showReadMore ? "Read Less" : "Read More"}
             </button>
           )}
@@ -92,7 +98,7 @@ const AnimalCard = ({ pageName, activeItem, handleSidebarClick }) => {
 
       <dialog ref={modalRef}>
         <XSquare
-          size={32}
+          size={50}
           onClick={closeModal}
           className={animalCardStyles.closeButton}
         />
@@ -110,7 +116,7 @@ const AnimalCard = ({ pageName, activeItem, handleSidebarClick }) => {
             onClick={() => {
               handleSidebarClick(null);
             }}
-            className={styles.readButton}
+            className={animalCardStyles.readButton}
           >
             Visit {group} for more information
           </Link>

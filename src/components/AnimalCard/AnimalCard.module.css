@@ -1,9 +1,13 @@
-:modal {
-  background-color: rgb(198, 39, 22);
+dialog:modal {
   border: 2px solid var(--quaternary-color);
   border-radius: 25px;
   padding: 20px;
   width: clamp(300px, 90%, 800px);
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
 }
 
 .closeButton {
@@ -11,4 +15,23 @@
   top: 10px;
   right: 10px;
   cursor: pointer;
+}
+
+.readButton {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.readButton:hover {
+  color: var(--primary-color);
+  background-color: white;
+  outline: 2px solid var(--primary-color);
 }
