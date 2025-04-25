@@ -5,8 +5,6 @@ a page detailing the mammals​
 a page details the birds​
 a page detailing the reptiles
 
-Attached are 3 files detailing 9 animals. Add more if you like, but your site MUST contain these 9 animals.
-
 Page Structure:
 
 Each page should have a header with a logo​
@@ -54,24 +52,3 @@ Main content:​
 Show a message about that group type
 When an animal name is clicked show the full summary of the animal
 The full summary should show all the properties of an animal. How you choose to display the information is up to you, but all of it must be shown
-
-Note: it is possible to build this as a true SPA with NO routes, but you MUST use routing in this assignment
-
-To achieve a Godkänt grade you must:
-
-Routes for 4 pages using React Router
-Reusable components
-Relevant use of props
-Relevant use of useState
-Components organised correctly
-Responsive design.
-
-To achieve a Välgodkänt grade you must complete the above and:
-
-A plan of how you will attempt this assignment
-External data imported where needed
-Directory and file organisation
-Use of CSS modules
-Use of Layout for page structure
-Correct code style and syntax
-Semantic naming

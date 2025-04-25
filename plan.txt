@@ -17,7 +17,9 @@ Zoo Website Implementation Plan
      * additional details
    - Create helper functions for data manipulation
 
-3. Components
+3. add images
+
+4. Components
    a. Header✅
       - Add logo
       - Create navigation
@@ -83,11 +85,7 @@ _________________________________________________________________
         * Mammals page
         * Reptiles page
 
- AnimalCard
-      - Create popup display for animal information
-      - Add close button with navigation
-      - Implement motion.div for animation
-      - Show full animal details
+
 
 
 
