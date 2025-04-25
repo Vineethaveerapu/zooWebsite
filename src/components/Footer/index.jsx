@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-import Navigation from "../Navigation";
+
 import {
   FacebookLogo,
   InstagramLogo,

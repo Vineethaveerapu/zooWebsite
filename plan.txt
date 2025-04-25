@@ -1,8 +1,5 @@
 Zoo Website Implementation Plan
 
-
-colors:#fae8e0-cream
-
 1. Project Setup
    - Create React project using Vite
    - Install required dependencies (react-router-dom)
@@ -13,176 +10,84 @@ colors:#fae8e0-cream
 2. Data Structure Setup
    - Create animals.js data file
    - Structure animal data with:
-     * id
      * name
      * image
      * description
-     * diet
      * group (mammal/bird/reptile)
      * additional details
    - Create helper functions for data manipulation
 
-3. Component Development
-   a. Layout Components
-      - Header with logo
-      - Navigation menu
-      - Footer
-      - Sidebar component
-      - Main content area
+3. Components
+   a. Header✅
+      - Add logo
+      - Create navigation
+        ->Use React Router's Link and useLocation for navigation
+        ->Imports page data from /src/data/pages.js
+        ->use useState to manage the mobile menu's open/close state
+        ->Use useLocation to track the current page
+        ->create a hamburger menu for mobile
+        ->use icons from phosphor-icons
+        ->Toggles between states when clicked
+        ->apply active styling when the page is active
+      - Implement responsive design
 
-   b. Animal Components
-      - AnimalList
-      - AnimalDetails
-      - AnimalCard
-      - GroupInfo
+   b. Footer✅
+      - Add copyright information
+      - Include social media links
+      - Add contact information
+        ->use icons from phosphor-icons
+      -add styles for both mobile and desktop
+-----------------------------------------------------------------
 
-4. State Management Implementation
-   - Set up state for:
-     * allAnimals
-     * selectedAnimalId
-     * selectedAnimal
-     * activeGroup
-   - Create state management functions
-   - Implement useEffect hooks for data fetching
+Next i want to add a video background/images to all pages✅
 
-5. Page Implementation
-   a. Home Page
-      - Welcome message
-      - Sidebar with all animals
-      - Main content area
-      - Animal selection functionality
-      - "Read More" button implementation
+  -  a BackgroundMedia component that can show either a video or an image as a background
+       -for home page  show a video
+       -for other pages  show a static image
+       -add h1
+       -add props and slug
+       -add styles for both mobile and desktop
 
-   b. Group Pages
-      - Mammals page
-      - Birds page
-      - Reptiles page
-      - Group-specific content
-      - Filtered animal lists
+_________________________________________________________________
 
-6. Routing Setup
-   - Implement React Router
-   - Set up routes for:
-     * Home (/)
-     * Mammals (/mammals)
-     * Birds (/birds)
-     * Reptiles (/reptiles)
-   - Configure navigation links
+ Sidebar
+      -An array of animal objects to display in the Sidebar
+      -A callback function that handles when an animal is selected
+      -A state variable to keep track of the selected animal
+      -text for the sidebar
+      -Uses useState to manage isOpen
+      -Each animal item is clickable and shows an active state when selected
+      -add styles
+      -update the sidebar in mobile view by adding a icons
 
-7. Styling Implementation
-   - Set up CSS Modules
-   - Create responsive design
-   - Implement animations
-   - Style components:
-     * Header
-     * Navigation
-     * Sidebar
-     * Animal cards
-     * Details view
-     * Footer
+ MainContent
+      - here i want to display the information so create a mainContent.js file add
+         content for all pages using  constructor then do map through the array and display the content
+         -html formatted steps
+         -check for required props
+         -write error handling
+           -If no matching content is found, returns an error message
+         -add styles
 
 
-Implementation Order:
-1. Start with project setup and data structure
-2. Implement basic layout components
-3. Create animal components
-4. Set up routing
-5. Implement state management
-6. Add styling
-7. Test and refine
-8. Final deployment
+ FeaturedContent
+      - When an activeItem prop is provided, it renders an AnimalCard component
+      - If no activeItem is provided, it renders a FeaturedContent component
+      -The AnimalCard receives three props:
+         -pageName: The name of the current page
+         -activeItem: The selected animal/item
+         -handleSidebarClick: A callback function for sidebar interactions
+      - Update all pages to use this component:
+        * Home page
+        * Birds page
+        * Mammals page
+        * Reptiles page
 
-Key Features to Implement:
-- Responsive navigation
-- Dynamic content loading
-- Animal details modal/popup
-- Filtered animal lists
-- Smooth transitions
-- Accessible design
-- Error handling
-- Loading states
-
-React Features Implementation Details:
-
-1. useState Implementation Points:
-   a. Home Page:
-      - selectedAnimalId: Track which animal is selected
-      - showWelcome: Toggle between welcome message and animal details
-      - isModalOpen: Control animal details modal visibility
-
-   b. Group Pages:
-      - selectedAnimalId: Track selected animal in group
-      - filteredAnimals: Store filtered list of animals by group
-      - isDetailsVisible: Control animal details visibility
-
-   c. Layout Components:
-      - isMenuOpen: Control mobile menu visibility (Header)
-      - activeLink: Track current navigation link
-
-   d. Animal Components:
-      - AnimalList: Track hover state for animations
-      - AnimalDetails: Track expanded/collapsed state
-      - AnimalCard: Track favorite/bookmark state
-
-2. useEffect Implementation Points:
-   a. Data Fetching:
-      - Home Page: Load all animals on mount
-      - Group Pages: Filter animals by group on mount/group change
-      - AnimalDetails: Fetch detailed data when ID changes
-
-   b. Side Effects:
-      - Update document title based on current page
-      - Handle window resize for responsive design
-      - Manage scroll position on navigation
-      - Clean up event listeners and subscriptions
-
-3. Props Usage:
-   a. Layout Components:
-      - Header: title, logo, navigation items
-      - Footer: copyright text, social links
-      - Sidebar: animals list, onSelect handler
-      - Navigation: current path, links array
-
-   b. Animal Components:
-      - AnimalList: animals array, onSelect handler
-      - AnimalDetails: animal object, onClose handler
-      - AnimalCard: animal data, onClick handler
-      - GroupInfo: group type, description
-
-4. Conditional Rendering Points:
-   a. Home Page:
-      - Welcome message vs Animal details
-      - "Read More" button visibility
-      - Modal visibility for animal details
-
-   b. Group Pages:
-      - Group introduction vs Animal details
-      - Empty state when no animals in group
-      - Loading state while fetching data
-
-   c. Layout:
-      - Mobile menu visibility
-      - Active navigation link highlighting
-      - Footer content based on page
-
-   d. Animal Components:
-      - AnimalDetails: Show/hide based on selection
-      - AnimalCard: Different layouts for different screen sizes
-      - Loading states while images load
-      - Error states for failed data fetching
-
-5. Component Communication:
-   - Parent to Child: Props for data and callbacks
-   - Child to Parent: Callback functions
-   - Sibling Components: Through parent state
-   - Global State: For shared data across components
+ AnimalCard
+      - Create popup display for animal information
+      - Add close button with navigation
+      - Implement motion.div for animation
+      - Show full animal details
 
 
 
-   Modified the FeaturedContent component to:
-Accept a pageName prop
-Filter the content to show only the relevant content for the current page
-Display the content in a clean format with a heading and paragraph
-Updated all pages (Home, Birds, Mammals, and Reptiles) to:
-Import the FeaturedContent component
-Pass the correct pageName prop to show only the relevant content for each page
