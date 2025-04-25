@@ -29,18 +29,18 @@ const Page = ({ title, slug, sidebarTitle }) => {
 
   switch (slug) {
     case "birds":
-      image = "/src/assets/birds.avif";
+      image = new URL(`/src/assets/birds.avif`, import.meta.url).href;
       break;
     case "mammals":
-      image = "/src/assets/mammals.avif";
+      image = new URL(`/src/assets/mammals.avif`, import.meta.url).href;
       break;
     case "reptiles":
-      image = "/src/assets/reptiles.avif";
+      image = new URL(`/src/assets/reptiles.avif`, import.meta.url).href;
       break;
 
     case "home":
     default:
-      video = "/src/assets/video1.mp4";
+      video = new URL(`/src/assets/video1.mp4`, import.meta.url).href;
       break;
   }
 
