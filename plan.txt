@@ -79,13 +79,45 @@ _________________________________________________________________
          -pageName: The name of the current page
          -activeItem: The selected animal/item
          -handleSidebarClick: A callback function for sidebar interactions
-      - Update all pages to use this component:
-        * Home page
-        * Birds page
-        * Mammals page
-        * Reptiles page
+
+
+ AnimalCard
+      - useState and useEffect can be used to manage full or short description
+      - modalref for the modal dialog
+      - manage modal open/close functions
+      - pass props to the components
+      in that i want to use two components
+          *AnimalCardContent
+          *AnimalModal
+
+     * AnimalCardContent
+      - display animal information
+      -Different buttons based on whether it's the home page:
+         -- Home page: "Read More" button and "Visit [group]" link
+         -- Other pages: Toggle button for "Read More"/"Read Less"
+      -  full description or short description based on the showReadMore state
+
+      -Takes props for:
+         -- activeItem: The animal data to display
+         -- showReadMore: Whether to show full or short description
+         -- handleReadMore: Function to toggle description
+         -- openModal: Function to open the modal
+         -- isHomePage: Whether it's being displayed on the home page
+         -- handleSidebarClick: Function to handle sidebar navigation
 
 
 
+     * AnimalModal
+      - display animal information
+      - use modalref to manage the modal dialog
+      - manage modal open/close functions
+      - pass props to the components
+          -modalRef: Reference to the dialog element
+          -activeItem: The animal data to display
+          -handleSidebarClick: Function to handle sidebar navigation
+          -closeModal: Function to close the modal
+
+
+   *refactor animal card component
 
 
